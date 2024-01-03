@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\graphicspath{{./}}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+
+\title{Rearranging Conditionally Convergent Series Without Changing the Result}
+\author{Michael Gionet}
+\date{Dec 13th, 2023}
+
+\begin{document}
+	\maketitle
+	
+	\section{Preliminaries}
+	
+	
+	\begin{definition}
+		\begin{equation}
+		A = \sum_{n=0}^{\infty} a_n \label{eq:1}
+		\end{equation}
+		We say that a series in the form \ref{eq:1} is Conditionally Convergent iff \newline
+		(a) The sequence of partial sums
+		\begin{equation}
+		A_N = \sum_{n=0}^{N} a_n
+		\end{equation}
+		converges as $N \rightarrow \infty$, and \newline
+		(b) The sequence of partial sums over the absolute value
+		\begin{equation}
+		B_N = \sum_{n=0}^{N} |a_n|
+		\end{equation}
+		diverges as $N \rightarrow \infty$.
+		
+	\end{definition}
+	
+	\begin{definition} \label{def}
+	Let $f: \mathbb{R} \rightarrow \mathbb{R}$, $g: \mathbb{R} \rightarrow \mathbb{R}$ with $g(x) \ne 0$ for all $x > x_0$. \newline
+	We say that $f(x) = O(g(x)), x \rightarrow \infty$ iff there is a constant $C > 0$, and so that $\left| \frac{f(x)}{g(x)} \right| < C $ whenever $x > x_0$.
+	\end{definition}
+
+	\begin{definition}
+	Let $f$ and $g$ be as in definition \ref{def}. Then, we define $f(x) = o(g(x)), x \rightarrow \infty $ iff $\left| \frac{f(x)}{g(x)} \right| \rightarrow 0$, as $ x \rightarrow \infty$.
+	\end{definition}
+	
+	\section{Theorem}
+	
+	\begin{theorem}
+	Let $(a_n)_{n=0}^{\infty}$ be a sequence of real numbers and let the series $\sum_{n=0}^{\infty} a_n$ converge conditionally. 
+	Suppose that there is a monotonically decreasing function, $f : \mathbb{N} \rightarrow \mathbb{R}$, with $f(n) > 0$, so that $\left| a_n \right| = O(f(n))$. Here, $\mathbb{N}$ denotes the set of natural numbers including $0$. \newline
+	
+	Next, let $\left( N_m \right)_{m=0}^{\infty}$ be a partition of $ \mathbb{N} $ so that: \newline
+	(1) $\forall m \geq 0, \left| N_m \right| < \infty$, where $\left| \cdot \right|$ denotes the cardinality of the set. \newline
+	(2) $\forall m, n \geq 0$, if $m < n$ then $M \in N_m$ and $N \in N_n \Rightarrow M < N $. In other words, the partitions are contiguous. \newline
+	(3) if $l_m = min \left( N_m \right)$ then $ \left| N_m \right| = o( \frac{1}{f(l_m)} ) $ as $m \rightarrow \infty$. \newline
+	
+	Finally, let $b : \mathbb{N} \rightarrow \mathbb{N}$ be a bijection so that for any $N_m$, the image $b \left( N_m \right) = N_m$. In other words, $b$ permutes each $N_m$. \newline
+	
+	Then, $$ \sum_{n=0}^{\infty} a_n = \sum_{k=0}^{\infty} a_{b(k)} $$
+	
+	\end{theorem}
+
+	\vspace{15px}
+
+	\begin{proof}
+	
+	
+	
+	
+	Pick $M \in \mathbb{N}$ and denote by $m$ the index of the partition so that $M \in N_m$. Denote by $l_m = min \left( N_m \right)$, $L_m = max \left( N_m \right)$. Then,
+	$$ \left| \sum_{n=0}^{\infty} a_n - \sum_{k=0}^{M} a_{b(k)} \right| = \left| \sum_{n=L_m+1}^{\infty} a_n + \left( \sum_{n=0}^{l_m-1} a_n - \sum_{k=0}^{l_m-1} a_{b(k)} \right) + \left( \sum_{n=l_m}^{L_m} a_n - \sum_{k=l_m}^{M} a_{b(k)} \right) \right| $$
+	
+	Note that $$ \sum_{n=0}^{l_m-1} a_n - \sum_{k=0}^{l_m-1} a_{b(k)} = 0 $$ since the two sums are finite rearrangements of one another.
+	
+	Hence we get from the former the triangle inequality
+	
+	$$ \left| \sum_{n=0}^{\infty} a_n - \sum_{k=0}^{M} a_{b(k)} \right| \leq \left| \sum_{n=L_m+1}^{\infty} a_n \right| + \left| \sum_{n=l_m}^{L_m} a_n - \sum_{k=l_m}^{M} a_{b(k)} \right| $$
+	
+	Naturally, $ \left| \sum_{n=L_m+1}^{\infty} a_n \right| = o(1)$ as $M \rightarrow \infty$ (for clarity, $L_m$ increases strictly monotonically in $m$, and in turn $m \rightarrow \infty$ whenever $M \rightarrow \infty$, which is required from each $N_m$ having finite order).
+	
+	The other term can be bounded as follows:
+	$$\left| \sum_{n=l_m}^{L_m} a_n - \sum_{k=l_m}^{M} a_{b(k)} \right| \leq 2 \left| N_m \right| \sup_{n \in N_m} \left| a_n \right|$$
+	the latter of this has order
+	$ o\left(\frac{1}{f(n)} \right) O( f(n) ) = o(1) $ as $ M \rightarrow \infty $. \newline
+	
+	We conclude that $$ \left|  \sum_{n=0}^{\infty} a_n - \sum_{k=0}^{M} a_{b(k)} \right| = o(1) $$ as $M \rightarrow \infty$, and thus
+	
+	$$ \sum_{n=0}^{\infty} a_n = \sum_{k=0}^{\infty} a_{b(k)} $$
+	
+	\end{proof}
+	
+	
+	Note: Some of the conditions can probably be loosened. For instance, I am not certain that a contiguous partition is a requirement for the rest of the proof to hold, but it does make imagining it a bit hairier. 
+	
+	\section{Discussion}
+	Riemann showed that it is possible to rearrange any conditionally convergent series so that the resulting sum is any real number. However in spite of this, it seemed as though there were ways of rearranging a series so that the result does not change. Of course if the series converged absolutely, then there would be no issues with this, but given Riemann's results, the question is a bit less straight forward for the conditionally convergent case. Regardless, I first considered that any permutation of a finite number of elements in the series should not affect the outcome. Then, I considered grouping contiguous terms together in contiguous blocks all of a common size. I was initially somewhat satisfied with the finite block permutations, but then the limits of when such an approach become suspect. One day I thought for a moment and it just clicked, it must depend on the growth rate of the terms. \\~\\
+	
+	There are further improvements that can be explored and made to this theorem. The heavy lifting is done using the inequality $\left| \sum_{k \in S} a_k \right| \leq \left| S \right| \sup_{k \in S} \left| a_k \right| $, so theoretically, you could find a looser permutation bound based a different inequality, such as an $l_p$ norm. This seems to be justified by the statement of the theorem not being as free as possible on absolutely convergent series. If each $a_n = f(n) = \frac{1}{n^{1 + \epsilon}}$, then it would specify that we can only permute blocks of size $ K n^{1 + \epsilon} $, while in reality we could permute these in any way we like. 
+	
+\end{document}

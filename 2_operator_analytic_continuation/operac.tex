@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\graphicspath{{./}}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+
+\title{Theorems regarding Analytic Continuation of Laplace Transform like Operators on Complex Analytic Spaces}
+\author{Michael Gionet}
+\date{Dec 30th, 2023}
+
+\begin{document}
+	\maketitle
+	
+	\section{Preliminaries}
+	
+	\subsection{Complex Analytic Functions}
+	
+	\begin{definition} \label{def_complex_diff_point}
+		Denote by $\mathbb{C}$ the set of complex numbers. 
+		Let $ U \subseteq \mathbb{C} $ be open. 
+		Let $ f : U \rightarrow \mathbb{C} $. 
+		We say that $f$ is complex differentiable at $z_0 \in U$ iff the limit:
+		$$ \lim_{ z \rightarrow z_0; z \in U \backslash \left\{ z_0 \right\} } \frac{ f(z) - f(z_0) }{ z - z_0 } $$
+		exists. 
+	\end{definition}
+
+	\begin{definition} \label{ def_complex_diff_domain }
+		Assume the same setup as in \ref{def_complex_diff_point}. Then, we say that $f$ is complex differentiable on $U$ iff $f$ is complex differentiable at every $z_0 \in U$. Another name we can give to complex differentiable functions are Holomorphic functions. 
+	\end{definition}
+
+	\begin{definition} \label{ def_entire_function }
+		Let $f : \mathbb{C} \rightarrow \mathbb{C}$ be Holomorphic on $\mathbb{C}$. Then, we say that $f$ is an entire function (or, just f is entire, for short).
+	\end{definition}
+
+	\begin{definition} \label{ def_meromorphic }
+		TODO: Fill this out formally once you have access to Stein's book.
+	\end{definition}
+
+	\subsection{ Some Conditions of Interest }
+	
+	\begin{definition} \label{ def_exponential_type }
+		Let $f : \mathbb{C} \rightarrow \mathbb{C}$ be entire. We say that $f$ is of exponential type with order $B$, for some $B \in \mathbb{R}$, iff there is an $R > 0$ and an $A > 0$ so that $\forall z \in \mathbb{C}, \left| z \right| > R $ implies $ \left| f(z) \right| \leq A e^{ B \left| z \right| } $.
+	\end{definition}
+
+	\begin{definition} \label{ def_exponential_type_cont }
+		Let $f : \left[0, \infty \right) \rightarrow \mathbb{C}$ be piecewise continuous. We say that $f$ is of exponential type with order $B$, for some $B \in \mathbb{R}$, iff there is an $R > 0$ and an $A > 0$ so that $\forall t > 0, t > R $ implies $ \left| f(t) \right| \leq A e^{ B \left| t \right| } $.
+	\end{definition}
+
+	\begin{definition} \label{ def_exponential_type_discrete }
+		Let $a : \mathbb{N} \rightarrow \mathbb{C}$ be a sequence on $\mathbb{C}$. We say that $a$ is of exponential type with order $B$, for some $B > 0$, iff there is an $N \in \mathbb{N}$ so that $ n \geq N $ implies $ \left| a_n \right| \leq A B^{ n } $.
+	\end{definition}
+
+	
+
+	\subsection{Laplace and Z Transforms}
+
+	\begin{definition} \label{ def_Z_Transform }
+		Let $ f : \mathbb{N} \rightarrow \mathbb{C} $ be of exponential type for some order $B$. Then, we define the Z transform of $f$ as the function $F : \mathbb{C} \backslash D_{B}(0) \rightarrow \mathbb{C}$, with $D_{B}(0)$ the disc of radius $B$ centered at the origin, and where
+		$$ F \left( z \right) = \sum_{n = 0}^{\infty} f \left( n \right) z^{-n} $$
+	\end{definition}
+
+	It should be noted that the definition given for the Z transform already requires that the sum converges. Normally though you might define it in terms of the formal sum, and then just bicker about the region of convergence later. This paper does not delve into the analysis regarding those regions of convergence though, and simply cares about the region as a postulate, so this approach is not unreasonable. 
+	
+	\begin{definition} \label{ def_Laplace_Transform }
+		Let $ f : \left[ 0, \infty \right) \rightarrow \mathbb{C}$ be of exponential type with order $B$. Then, we define the Laplace transform of $f$ as the function $ F : \left\{ s \in \mathbb{C} | Re(s) > B \right\} \rightarrow \mathbb{C}$, where
+		$$ F(s) = \int_{0}^{\infty} f(t) e^{-s t} dt $$
+	\end{definition}
+	
+	\section{ Discussion }
+	
+	The significance of this is that analytic continuation can be applied to entire operators on holomorphic function spaces, without the need for a case by case analysis of the input function. Instead, knowledge of particular regularities of the inputs, such as holomorphy and growth rates, is all that is required to find a general form for an analytic continuation. 
+	
+	
+\end{document}
