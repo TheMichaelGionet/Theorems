@@ -15,6 +15,8 @@
 	
 	\section{Preliminaries}
 	
+	For more information about complex analysis, or any theorems seen, see \cite{steinComplexAnalysis}.
+	
 	\subsection{Complex Analytic Functions}
 	
 	\begin{definition} \label{def_complex_diff_point}
@@ -34,23 +36,12 @@
 		Let $f : \mathbb{C} \rightarrow \mathbb{C}$ be Holomorphic on $\mathbb{C}$. Then, we say that $f$ is an entire function (or, just f is entire, for short).
 	\end{definition}
 
+	Following the definition of a meromorphic function presented by Stein and Shakarchi \cite{steinComplexAnalysis},
 	\begin{definition} \label{ def_meromorphic }
-		TODO: Fill this out formally once you have access to Stein's book.
+		Let $U \subseteq \mathbb{C}$ be open, and let $(z)_k$ be a sequence of points in $U$ with no limit point in $U$. 
+		Let $f : U \backslash \left\{z_k \right\} \rightarrow \mathbb{C} $ be holomorphic so that $f$ takes on poles at the points in $\left\{ z_k \right\}$. Then, we say that $f$ is meromorphic.
 	\end{definition}
 
-	\subsection{ Some Conditions of Interest }
-	
-	\begin{definition} \label{ def_exponential_type }
-		Let $f : \mathbb{C} \rightarrow \mathbb{C}$ be entire. We say that $f$ is of exponential type with order $B$, for some $B \in \mathbb{R}$, iff there is an $R > 0$ and an $A > 0$ so that $\forall z \in \mathbb{C}, \left| z \right| > R $ implies $ \left| f(z) \right| \leq A e^{ B \left| z \right| } $.
-	\end{definition}
-
-	\begin{definition} \label{ def_exponential_type_cont }
-		Let $f : \left[0, \infty \right) \rightarrow \mathbb{C}$ be piecewise continuous. We say that $f$ is of exponential type with order $B$, for some $B \in \mathbb{R}$, iff there is an $R > 0$ and an $A > 0$ so that $\forall t > 0, t > R $ implies $ \left| f(t) \right| \leq A e^{ B \left| t \right| } $.
-	\end{definition}
-
-	\begin{definition} \label{ def_exponential_type_discrete }
-		Let $a : \mathbb{N} \rightarrow \mathbb{C}$ be a sequence on $\mathbb{C}$. We say that $a$ is of exponential type with order $B$, for some $B > 0$, iff there is an $N \in \mathbb{N}$ so that $ n \geq N $ implies $ \left| a_n \right| \leq A B^{ n } $.
-	\end{definition}
 
 	
 
@@ -67,10 +58,73 @@
 		Let $ f : \left[ 0, \infty \right) \rightarrow \mathbb{C}$ be of exponential type with order $B$. Then, we define the Laplace transform of $f$ as the function $ F : \left\{ s \in \mathbb{C} | Re(s) > B \right\} \rightarrow \mathbb{C}$, where
 		$$ F(s) = \int_{0}^{\infty} f(t) e^{-s t} dt $$
 	\end{definition}
+
+	\section{ Main Results }
+	
+	\begin{theorem} \label{z_transform_analytic_continuation}
+		 Let $f : \mathbb{C} \rightarrow \mathbb{C}$ be entire, and satisfy the bound $$ \left| f(x + y i ) \right| \leq A e^{ B \left| x \right| + C \left| y \right| } $$ for some constants $A > 0$, $B \in \mathbb{R}$, and $C < \pi$.
+		 
+		 
+		 Then, if $$F(z) = \sum_{n=0}^{\infty} f(n) z^{-n} $$ for some radius of divergence, is the Z transform of $f$ when evaluated at the natural numbers, then $F$ has an analytic continuation, for some radius of convergence, given by the expression 
+		 $$ F(z) = -z\sum_{n=0}^{\infty} f(-n-1) z^{n} $$
+	\end{theorem}
+
+	\begin{proof}
+		It suffices to show that the function $$ H(s) = \frac{-1}{2 \pi i} \int_{-\frac{1}{2} - i \infty}^{-\frac{1}{2} + i \infty} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz $$ evaluates to both sums shown, whenever they converge in some radii of divergence and of convergence respectively (note that these radii will not be degenerate, due to the growth rate imposed on $f$). 
+		
+		To evaluate this function, consider the contour corresponding to the boundary of a strip:
+		$$ \int_{C} = \int_{-\frac{1}{2} - i R}^{-\frac{1}{2} + i R} + \int_{-\frac{1}{2} + i R}^{ \frac{1}{2} + N + i R } + \int_{ \frac{1}{2} + N + i R}^{ \frac{1}{2} + N - i R} + \int_{ \frac{1}{2} + N - i R }^{-\frac{1}{2} - i R} $$
+		Note that this contour has negative orientation. 
+		
+		For the time being, we will restrict $s$ to the sliver $ \left| \angle -s \right| < \pi - C $. Analytic continuation can be later invoked to get the rest back. 
+		
+		By Cauchy's residue theorem, we can evaluate this integral to get:
+		$$ \frac{-1}{2 \pi i} \int_{C} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz = \sum_{n=0}^{N} res_{z=n} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } =  \sum_{n=0}^{N} f(n) (-s)^{-n} (-1)^{n} = \sum_{n=0}^{N} f(n) s^{-n} $$
+		
+		We can deform this contour now, letting $R \rightarrow \infty$. Then, the integral over the top and bottom parts of the strip vanish:
+		
+		$$ \left| \frac{1}{2 \pi i} \int_{-\frac{1}{2} + i R}^{ \frac{1}{2} + N + i R }  \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz \right| 
+		\leq \frac{A}{ 2 } e^{R \angle -s} \int_{-\frac{1}{2} }^{ \frac{1}{2} + N } e^{ B \left| x \right| + ( C - \pi ) R } \left| s \right|^{-x} dx $$
+		$$ \leq \frac{A}{ 2 } e^{R \left( \angle -s + C - \pi \right)} \int_{-\frac{1}{2} }^{ \frac{1}{2} + N } e^{ B \left| x \right| } \left| s \right|^{-x} dx $$
+		
+		As $R \rightarrow \infty$, the expression vanishes, as desired. The case for the bottom integral is similar and will be omitted. 
+		
+		We only need to treat the other integral $ \frac{-1}{2 \pi i} \int_{ \frac{1}{2} + N + i R}^{ \frac{1}{2} + N - i R} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz $. 
+		We can also establish an estimate
+		
+		$$ \left|\frac{-1}{2 \pi i} \int_{ \frac{1}{2} + N + i R}^{ \frac{1}{2} + N - i R} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz \right| \leq \frac{A}{2} \int_{-\infty}^{\infty} \left| s \right|^{N+\frac{1}{2}} e^{ \left| y \right| \angle -s} e^{ B (N + \frac{1}{2}) + C \left| y \right| }  dy $$
+		$$ \leq \frac{A}{2} e^{ ( B - log \left| s \right| ) (N + \frac{1}{2}) } \int_{-\infty}^{\infty} e^{ ( C - \pi + \angle -s ) \left| y \right|} dy $$
+		
+		The integral converges. For $\left| s \right| > e^B$, the factor out front will drive the expression to 0 as $N \rightarrow \infty$. We are left with the desired relation:
+		
+		$$ \frac{-1}{2 \pi i} \int_{-\frac{1}{2} - i \infty}^{-\frac{1}{2} + i \infty} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz = \sum_{n=0}^{\infty} f(n) z^{-n} $$
+		
+		This relation was proved with the restrictions $ \left| \angle -s \right| < \pi - C $ and $ \left| s \right| > e^B $. However, whenever the integral converges in some open subset of $\mathbb{C}$, the sum will also have an analytic continuation to that. 
+		TODO: double check exactly what theorem says that the resulting function will be holomorphic whenever it converges.
+		
+		We now compute the initial function by using a different contour (due to the similarity to the last, I will leave some details to the reader). 
+		
+		TODO: this part.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	\end{proof}
 	
 	\section{ Discussion }
 	
 	The significance of this is that analytic continuation can be applied to entire operators on holomorphic function spaces, without the need for a case by case analysis of the input function. Instead, knowledge of particular regularities of the inputs, such as holomorphy and growth rates, is all that is required to find a general form for an analytic continuation. 
+	
+	\bibliographystyle{plain}
+	\bibliography{references}
 	
 	
 \end{document}
