@@ -5,10 +5,11 @@
 \graphicspath{{./}}
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 
-\title{Theorems regarding Analytic Continuation of Laplace Transform like Operators on Complex Analytic Spaces}
+\title{Analytic Continuation of the Laplace and Z Transform Operators}
 \author{Michael Gionet}
-\date{Dec 30th, 2023}
+\date{Jan 18th, 2024}
 
 \begin{document}
 	\maketitle
@@ -42,6 +43,8 @@
 		Let $f : U \backslash \left\{z_k \right\} \rightarrow \mathbb{C} $ be holomorphic so that $f$ takes on poles at the points in $\left\{ z_k \right\}$. Then, we say that $f$ is meromorphic.
 	\end{definition}
 
+	TODO: Cauchy's theorem, analytic continuation, theorem that shows that an integral converges to a holomorphic function.
+
 
 	
 
@@ -65,27 +68,27 @@
 		 Let $f : \mathbb{C} \rightarrow \mathbb{C}$ be entire, and satisfy the bound $$ \left| f(x + y i ) \right| \leq A e^{ B \left| x \right| + C \left| y \right| } $$ for some constants $A > 0$, $B \in \mathbb{R}$, and $C < \pi$.
 		 
 		 
-		 Then, if $$F(z) = \sum_{n=0}^{\infty} f(n) z^{-n} $$ for some radius of divergence, is the Z transform of $f$ when evaluated at the natural numbers, then $F$ has an analytic continuation, for some radius of convergence, given by the expression 
-		 $$ F(z) = -z\sum_{n=0}^{\infty} f(-n-1) z^{n} $$
+		 Then, if $$F(s) = \sum_{n=0}^{\infty} f(n) s^{-n} $$ for some radius of divergence, is the Z transform of $f$ when evaluated at the natural numbers, then $F$ has an analytic continuation, for some radius of convergence, given by the expression 
+		 $$ F(s) = -\sum_{n=0}^{\infty} f(-n-1) s^{n+1} $$
 	\end{theorem}
 
 	\begin{proof}
 		It suffices to show that the function $$ H(s) = \frac{-1}{2 \pi i} \int_{-\frac{1}{2} - i \infty}^{-\frac{1}{2} + i \infty} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz $$ evaluates to both sums shown, whenever they converge in some radii of divergence and of convergence respectively (note that these radii will not be degenerate, due to the growth rate imposed on $f$). 
 		
 		To evaluate this function, consider the contour corresponding to the boundary of a strip:
-		$$ \int_{C} = \int_{-\frac{1}{2} - i R}^{-\frac{1}{2} + i R} + \int_{-\frac{1}{2} + i R}^{ \frac{1}{2} + N + i R } + \int_{ \frac{1}{2} + N + i R}^{ \frac{1}{2} + N - i R} + \int_{ \frac{1}{2} + N - i R }^{-\frac{1}{2} - i R} $$
+		$$ \int_{ \gamma } = \int_{-\frac{1}{2} - i R}^{-\frac{1}{2} + i R} + \int_{-\frac{1}{2} + i R}^{ \frac{1}{2} + N + i R } + \int_{ \frac{1}{2} + N + i R}^{ \frac{1}{2} + N - i R} + \int_{ \frac{1}{2} + N - i R }^{-\frac{1}{2} - i R} $$
 		Note that this contour has negative orientation. 
 		
 		For the time being, we will restrict $s$ to the sliver $ \left| \angle -s \right| < \pi - C $. Analytic continuation can be later invoked to get the rest back. 
 		
 		By Cauchy's residue theorem, we can evaluate this integral to get:
-		$$ \frac{-1}{2 \pi i} \int_{C} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz = \sum_{n=0}^{N} res_{z=n} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } =  \sum_{n=0}^{N} f(n) (-s)^{-n} (-1)^{n} = \sum_{n=0}^{N} f(n) s^{-n} $$
+		$$ \frac{-1}{2 \pi i} \int_{ \gamma } \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz = \sum_{n=0}^{N} res_{z=n} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } =  \sum_{n=0}^{N} f(n) (-s)^{-n} (-1)^{n} = \sum_{n=0}^{N} f(n) s^{-n} $$
 		
 		We can deform this contour now, letting $R \rightarrow \infty$. Then, the integral over the top and bottom parts of the strip vanish:
 		
 		$$ \left| \frac{1}{2 \pi i} \int_{-\frac{1}{2} + i R}^{ \frac{1}{2} + N + i R }  \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz \right| 
-		\leq \frac{A}{ 2 } e^{R \angle -s} \int_{-\frac{1}{2} }^{ \frac{1}{2} + N } e^{ B \left| x \right| + ( C - \pi ) R } \left| s \right|^{-x} dx $$
-		$$ \leq \frac{A}{ 2 } e^{R \left( \angle -s + C - \pi \right)} \int_{-\frac{1}{2} }^{ \frac{1}{2} + N } e^{ B \left| x \right| } \left| s \right|^{-x} dx $$
+		\leq A e^{R \angle -s} \int_{-\frac{1}{2} }^{ \frac{1}{2} + N } e^{ B \left| x \right| + ( C - \pi ) R } \left| s \right|^{-x} dx $$
+		$$ \leq A e^{R \left( \angle -s + C - \pi \right)} \int_{-\frac{1}{2} }^{ \frac{1}{2} + N } e^{ B \left| x \right| } \left| s \right|^{-x} dx $$
 		
 		As $R \rightarrow \infty$, the expression vanishes, as desired. The case for the bottom integral is similar and will be omitted. 
 		
@@ -93,31 +96,84 @@
 		We can also establish an estimate
 		
 		$$ \left|\frac{-1}{2 \pi i} \int_{ \frac{1}{2} + N + i R}^{ \frac{1}{2} + N - i R} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz \right| \leq \frac{A}{2} \int_{-\infty}^{\infty} \left| s \right|^{N+\frac{1}{2}} e^{ \left| y \right| \angle -s} e^{ B (N + \frac{1}{2}) + C \left| y \right| }  dy $$
-		$$ \leq \frac{A}{2} e^{ ( B - log \left| s \right| ) (N + \frac{1}{2}) } \int_{-\infty}^{\infty} e^{ ( C - \pi + \angle -s ) \left| y \right|} dy $$
+		$$ \leq A e^{ ( B - log \left| s \right| ) (N + \frac{1}{2}) } \int_{-\infty}^{\infty} e^{ ( C - \pi + \angle -s ) \left| y \right|} dy $$
 		
 		The integral converges. For $\left| s \right| > e^B$, the factor out front will drive the expression to 0 as $N \rightarrow \infty$. We are left with the desired relation:
 		
 		$$ \frac{-1}{2 \pi i} \int_{-\frac{1}{2} - i \infty}^{-\frac{1}{2} + i \infty} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz = \sum_{n=0}^{\infty} f(n) z^{-n} $$
 		
-		This relation was proved with the restrictions $ \left| \angle -s \right| < \pi - C $ and $ \left| s \right| > e^B $. However, whenever the integral converges in some open subset of $\mathbb{C}$, the sum will also have an analytic continuation to that. 
-		TODO: double check exactly what theorem says that the resulting function will be holomorphic whenever it converges.
-		
 		We now compute the initial function by using a different contour (due to the similarity to the last, I will leave some details to the reader). 
 		
-		TODO: this part.
+		Let
+		$$ \int_{ \gamma'} = \int_{-\frac{1}{2} - i R }^{ -\frac{1}{2} + i R } + \int_{ -\frac{1}{2} + i R }^{ -\frac{1}{2} - N + i R } + \int_{-\frac{1}{2} - N + i R }^{ -\frac{1}{2} - N - i R } + \int_{-\frac{1}{2} - N - i R}^{ -\frac{1}{2} - i R } $$
 		
+		Note that this time the contour has a positive orientation.
 		
+		Then, From Cauchy's theorem, $$ \frac{ -1 }{ 2 \pi i } \int_{\gamma'}  \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz = -\sum_{n=-N}^{-1} f(n) (-s)^{-n} (-1)^{n} = -\sum_{n=0}^{N-1} f(-n-1) s^{n+1} $$
 		
+		The same estimates apply as above for
+		$$ \int_{ -\frac{1}{2} + i R }^{ -\frac{1}{2} - N + i R } \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz $$ and $$ \int_{-\frac{1}{2} - N - i R}^{ -\frac{1}{2} - i R } \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz $$
+		so we can deform the contour and let $R \rightarrow \infty$. 
 		
+		For the last integral, we can use the estimate
 		
+		$$ \left| \frac{-1}{ 2 \pi i } \int_{-\frac{1}{2} - N + i R }^{ -\frac{1}{2} - N - i R }  \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz \right| \leq A e^{(B + log\left| s \right|) (N + \frac{1}{2})} \int_{-\infty}^{\infty} e^{( C + \left| \angle-s \right| - \pi )|y|} dy $$
 		
+		Which decreases to $0$ as $N \rightarrow \infty $ and when we impose the condition that $|s| < e^{-B}$. 
 		
+		So for $|\angle-s| < C - \pi$ and $|s| < e^{-B}$, we have:
 		
+		$$ \frac{-1}{2 \pi i} \int_{-\frac{1}{2} - i \infty}^{ -\frac{1}{2} + i \infty} \frac{\pi f(z) (-s)^{-z}}{ sin( \pi z ) } dz = -\sum_{n=0}^{\infty} f(-n-1) s^{n+1} $$
 		
+		Since these representations are only defined on simply connected open subsets of $\mathbb{C}$, and the integral's domain of convergence intersects both sums' domains of convergence, the integral defines an analytic continuation of the two sums, and hence the sums are analytic continuations of each other for different domains. Whenever these series converge with some smaller radius of divergence, or larger radius of convergence, will still work by analytic continuation. 
+	\end{proof}
+
+	It should be noted that another way of doing this is to define a series in the form $ H(z) = \sum_{n=0}^{\infty} \frac{f(n) (-s)^n}{n!} $, and then evaluate its laplace transform in two different ways. One way by distributing it term by term, and the other by expanding $e^{-sx}$ into its taylor series, and invoking Ramanujan's master theorem. If I recall correctly, this way requires stricter assumptions on the growth rate of $H(z)$. 
+	
+	\begin{theorem} \label{laplace_analytic_continuation}
+		Let $f : \mathbb{C} \rightarrow \mathbb{C}$ be entire, and satisfy the growth rate $|f(z)| \leq A e^{B |z|}$, for some $B \in \mathbb{R}$. Then, let $$F(s) = \int_{0}^{\infty} f(z) e^{-sz} dz$$ for $Re(s) > B$, be its Laplace transform. Then, for any angle, $\theta \in \left[0, 2 \pi \right)$, letting $\omega = e^{\theta i}$, we have $$ F(s) = \omega \int_{0}^{\infty} f(\omega z) e^{-\omega z s} dz $$ as an analytic continuation, whenever $Re(\omega s) > B$. In particular, $$ F(s) = -\int_{0}^{\infty} f(-z) e^{-(-s)z} dz $$
+	\end{theorem}
+
+	\begin{proof}
+		Let $ 0 < \theta < \frac{\pi}{2}$. Then, consider the contour given by $\int_{C} = \int_{0}^{R} + \int_{R}^{R e^{i \theta}} + \int_{R e^{i \theta}}^{0}$.
+		By Cauchy's theorem,
+		$$ \int_{C} f(z) e^{-sz} dz = 0 $$.
 		
+		For now, we will impose the restrictions that $x = Re(s) > B$, and $y = Im(s) \leq 0$. 
 		
+		For any choice of $R>0$. Let $R \rightarrow \infty$, then we can bound the integral along the arc as follows:
+		
+		$$ \int_{R}^{R e^{i \theta}} f(z) e^{-sz} dz = \int_{0}^{\theta} f(R e^{i t}) e^{-R e^{i t} } i R e^{i t} dt $$
+		
+		$$ \left| \int_{0}^{\theta} f(R e^{i t}) e^{-R e^{i t} } i R e^{i t} dt \right| \leq R \int_{0}^{\theta} \left| f(R e^{i t}) \right| e^{-R \left( x cos(t) + y sin(t) \right)} dt $$
+		From the bound we impose on the function,
+		$$ \leq A R \int_{0}^{\theta} e^{-R \left( x cos(t) - y sin(t) - B \right)} dt \leq A R \theta \sup_{t \in \left[ 0, \theta \right]}  e^{-R \left( x cos(t) - y sin(t) - B \right)} $$
+		
+		The expression $x cos(t) - y sin(t) - B > 0$ from the conditions imposed on $x$, $y$, and $\theta$, so the integral goes to $0$ as $R \rightarrow \infty$.
+		
+		Deforming the main contour now, by letting $R \rightarrow \infty$, we find that
+		$$ \int_{0}^{\infty} f(z) e^{-zs} dz = \int_{0}^{ e^{i \theta} \infty} f(z) e^{-zs} dz $$
+		or after substituting, 
+		$$ \int_{0}^{\infty} f(z) e^{-zs} dz = e^{i \theta} \int_{0}^{\infty} f(e^{i \theta} z) e^{-s e^{i \theta} z} dz $$
+		
+		At this point we just need to prove that if $\theta$ was any other angle, then we can use a sequence of contour deformations and analytic continuations in the same vein, and relate it back to $0 < \theta < \pi/2$. 
+		
+		Note that the last expression converges to a holomorphic function for $Re(s e^{i \theta}) > B$, and is otherwise free from the initial restriction $ Re(s) > B $ (i.e. it is an analytic continuation of the first expression). 
+		
+		We can pick $ 0 < \theta_1 < \pi/2 $, ..., $ 0 < \theta_k < \pi_2 $, and then invoke the same procedure to get a sequence of analytic continuations, each of which agree on some open set $U_l$, $l = 1 ... k$:
+		
+		$$ \int_{0}^{\infty} f(z) e^{-zs} dz = e^{i \theta_1} \int_{0}^{\infty} f(e^{i \theta_1} z) e^{-s e^{i \theta_1} z} dz $$
+		$$ e^{i \theta_1} \int_{0}^{\infty} f(e^{i \theta_1} z) e^{-s e^{i \theta_1} z} dz = e^{i \left( \theta_1 + \theta_2 \right)} \int_{0}^{\infty} f( e^{i \left( \theta_1 + \theta_2 \right)} z) e^{ -s e^{i \left( \theta_1 + \theta_2 \right)} z} dz $$
+		...
+		$$ e^{i \theta_1 + ... + \theta_{k-1} } \int_{0}^{\infty} f( e^{i \theta_1 + ... + \theta_{k-1} } z) e^{-s e^{i \theta_1 + ... + \theta_{k-1} } z} dz = e^{i \theta_1 + ... + \theta_{k} } \int_{0}^{\infty} f( e^{i \theta_1 + ... + \theta_{k} } z) e^{ -s e^{i \theta_1 + ... + \theta_{k} } z} dz $$
+		
+		To obtain $ -\int_{0}^{\infty} f(-z) e^{-(-s)z} dz$, set $\theta = \pi$, and $e^{i \theta} = -1$. 
 		
 	\end{proof}
+
+	Another way of proving the later theorem is to start off with theorem \ref{z_transform_analytic_continuation}, but apply it to $f(\alpha + n) s^{-\alpha}$, and integrate both sides from $0$ to $1$ in $\alpha$. 
+
+	
 	
 	\section{ Discussion }
 	
