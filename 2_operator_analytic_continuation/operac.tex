@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{amsmath}
 \graphicspath{{./}}
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
@@ -128,7 +129,7 @@
 		Since these representations are only defined on simply connected open subsets of $\mathbb{C}$, and the integral's domain of convergence intersects both sums' domains of convergence, the integral defines an analytic continuation of the two sums, and hence the sums are analytic continuations of each other for different domains. Whenever these series converge with some smaller radius of divergence, or larger radius of convergence, will still work by analytic continuation. 
 	\end{proof}
 
-	It should be noted that another way of doing this is to define a series in the form $ H(z) = \sum_{n=0}^{\infty} \frac{f(n) (-s)^n}{n!} $, and then evaluate its laplace transform in two different ways. One way by distributing it term by term, and the other by expanding $e^{-sx}$ into its taylor series, and invoking Ramanujan's master theorem. If I recall correctly, this way requires stricter assumptions on the growth rate of $H(z)$. 
+	It should be noted that another way of doing this is to define a series in the form $ H(z) = \sum_{n=0}^{\infty} \frac{f(n) (-z)^n}{n!} $, and then evaluate its laplace transform in two different ways. One way by distributing it term by term, and the other by expanding $e^{-sx}$ into its taylor series, and invoking Ramanujan's master theorem. If I recall correctly, this way requires stricter assumptions on the growth rate of $H(z)$. 
 	
 	\begin{theorem} \label{laplace_analytic_continuation}
 		Let $f : \mathbb{C} \rightarrow \mathbb{C}$ be entire, and satisfy the growth rate $|f(z)| \leq A e^{B |z|}$, for some $B \in \mathbb{R}$. Then, let $$F(s) = \int_{0}^{\infty} f(z) e^{-sz} dz$$ for $Re(s) > B$, be its Laplace transform. Then, for any angle, $\theta \in \left[0, 2 \pi \right)$, letting $\omega = e^{\theta i}$, we have $$ F(s) = \omega \int_{0}^{\infty} f(\omega z) e^{-\omega z s} dz $$ as an analytic continuation, whenever $Re(\omega s) > B$. In particular, $$ F(s) = -\int_{0}^{\infty} f(-z) e^{-(-s)z} dz $$
@@ -137,11 +138,11 @@
 	\begin{proof}
 		Let $ 0 < \theta < \frac{\pi}{2}$. Then, consider the contour given by $\int_{C} = \int_{0}^{R} + \int_{R}^{R e^{i \theta}} + \int_{R e^{i \theta}}^{0}$.
 		By Cauchy's theorem,
-		$$ \int_{C} f(z) e^{-sz} dz = 0 $$.
+		$$ \int_{C} f(z) e^{-sz} dz = 0 $$
 		
 		For now, we will impose the restrictions that $x = Re(s) > B$, and $y = Im(s) \leq 0$. 
 		
-		For any choice of $R>0$. Let $R \rightarrow \infty$, then we can bound the integral along the arc as follows:
+		To evaluate it, we can bound the integral along the arc as follows:
 		
 		$$ \int_{R}^{R e^{i \theta}} f(z) e^{-sz} dz = \int_{0}^{\theta} f(R e^{i t}) e^{-R e^{i t} } i R e^{i t} dt $$
 		
@@ -156,18 +157,27 @@
 		or after substituting, 
 		$$ \int_{0}^{\infty} f(z) e^{-zs} dz = e^{i \theta} \int_{0}^{\infty} f(e^{i \theta} z) e^{-s e^{i \theta} z} dz $$
 		
+		As desired, for the restriction to the angles $0 < \theta < \pi/2$. 
+		
 		At this point we just need to prove that if $\theta$ was any other angle, then we can use a sequence of contour deformations and analytic continuations in the same vein, and relate it back to $0 < \theta < \pi/2$. 
 		
 		Note that the last expression converges to a holomorphic function for $Re(s e^{i \theta}) > B$, and is otherwise free from the initial restriction $ Re(s) > B $ (i.e. it is an analytic continuation of the first expression). 
 		
-		We can pick $ 0 < \theta_1 < \pi/2 $, ..., $ 0 < \theta_k < \pi_2 $, and then invoke the same procedure to get a sequence of analytic continuations, each of which agree on some open set $U_l$, $l = 1 ... k$:
+		We can let $\theta = \theta_1 + ... + \theta_k$ for $ 0 < \theta_1 < \pi/2 $, ..., $ 0 < \theta_k < \pi/2 $, and then invoke the same procedure to get a sequence of analytic continuations, each of which agree on some open set $U_l$, $l = 1 ... k$:
 		
-		$$ \int_{0}^{\infty} f(z) e^{-zs} dz = e^{i \theta_1} \int_{0}^{\infty} f(e^{i \theta_1} z) e^{-s e^{i \theta_1} z} dz $$
-		$$ e^{i \theta_1} \int_{0}^{\infty} f(e^{i \theta_1} z) e^{-s e^{i \theta_1} z} dz = e^{i \left( \theta_1 + \theta_2 \right)} \int_{0}^{\infty} f( e^{i \left( \theta_1 + \theta_2 \right)} z) e^{ -s e^{i \left( \theta_1 + \theta_2 \right)} z} dz $$
+		$$ \int_{0}^{\infty} f(z) e^{-zs} dz = e^{i \theta_1} \int_{0}^{\infty} f(e^{i \theta_1} z) e^{-s e^{i \theta_1} z} dz \ \text{on} \ U_1 $$
+		$$ e^{i \theta_1} \int_{0}^{\infty} f(e^{i \theta_1} z) e^{-s e^{i \theta_1} z} dz = e^{i \left( \theta_1 + \theta_2 \right)} \int_{0}^{\infty} f( e^{i \left( \theta_1 + \theta_2 \right)} z) e^{ -s e^{i \left( \theta_1 + \theta_2 \right)} z} dz \ \text{on} \ U_2 $$
 		...
-		$$ e^{i \theta_1 + ... + \theta_{k-1} } \int_{0}^{\infty} f( e^{i \theta_1 + ... + \theta_{k-1} } z) e^{-s e^{i \theta_1 + ... + \theta_{k-1} } z} dz = e^{i \theta_1 + ... + \theta_{k} } \int_{0}^{\infty} f( e^{i \theta_1 + ... + \theta_{k} } z) e^{ -s e^{i \theta_1 + ... + \theta_{k} } z} dz $$
+		$$ e^{i \theta_1 + ... + \theta_{k-1} } \int_{0}^{\infty} f( e^{i \theta_1 + ... + \theta_{k-1} } z) e^{-s e^{i \theta_1 + ... + \theta_{k-1} } z} dz = e^{i \theta_1 + ... + \theta_{k} } \int_{0}^{\infty} f( e^{i \theta_1 + ... + \theta_{k} } z) e^{ -s e^{i \theta_1 + ... + \theta_{k} } z} dz \ \text{on} \ U_k $$
+		$$ = e^{i \theta} \int_{0}^{\infty} f(e^{i \theta } z) e^{-s e^{i \theta} z} dz $$
 		
-		To obtain $ -\int_{0}^{\infty} f(-z) e^{-(-s)z} dz$, set $\theta = \pi$, and $e^{i \theta} = -1$. 
+		
+		
+		Our choice of $\theta \in \left[ 0, 2 \pi \right)$ was arbitrary, so it holds for all $\theta \in \left[ 0 , 2 \pi \right)$. 
+		
+		
+		
+		To obtain $ -\int_{0}^{\infty} f(-z) e^{-(-s)z} dz$, set $\theta = \pi$, and $e^{i \theta} = -1$, and this converges at least for $Re(-s) > B$. 
 		
 	\end{proof}
 
@@ -177,7 +187,7 @@
 	
 	\section{ Discussion }
 	
-	The significance of this is that analytic continuation can be applied to entire operators on holomorphic function spaces, without the need for a case by case analysis of the input function. Instead, knowledge of particular regularities of the inputs, such as holomorphy and growth rates, is all that is required to find a general form for an analytic continuation. 
+	The significance of this is that analytic continuation can be applied to entire operators on holomorphic functions, without the need for a case by case analysis of the input function. Instead, knowledge of particular regularities of the inputs, such as holomorphy and growth rates, is all that is required to find a general form for an analytic continuation. 
 	
 	\bibliographystyle{plain}
 	\bibliography{references}

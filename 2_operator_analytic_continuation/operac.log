@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.6.9)  18 JAN 2024 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.6.9)  19 JAN 2024 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -71,62 +71,154 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip51
 \dth@everypar=\toks21
 )
-\c@definition=\count175
-\c@theorem=\count176
-\c@lemma=\count177
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen137
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen139
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks23
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks24
+\eqnshift@=\dimen140
+\alignsep@=\dimen141
+\tagshift@=\dimen142
+\tagwidth@=\dimen143
+\totwidth@=\dimen144
+\lineht@=\dimen145
+\@envbody=\toks25
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+\c@definition=\count187
+\c@theorem=\count188
+\c@lemma=\count189
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count178
-\l__pdf_internal_box=\box45
+\l__kernel_color_stack_int=\count190
+\l__pdf_internal_box=\box47
 )
 (./operac.aux)
 \openout1 = `operac.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count179
-\scratchdimen=\dimen137
-\scratchbox=\box46
-\nofMPsegments=\count180
-\nofMParguments=\count181
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count182
-\MPscratchDim=\dimen138
-\MPnumerator=\count183
-\makeMPintoPDFobject=\count184
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count191
+\scratchdimen=\dimen146
+\scratchbox=\box48
+\nofMPsegments=\count192
+\nofMParguments=\count193
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count194
+\MPscratchDim=\dimen147
+\MPnumerator=\count195
+\makeMPintoPDFobject=\count196
+\everyMPtoPDFconversion=\toks28
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -134,7 +226,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (46.86845pt too wide) detected at line 85
+Overfull \hbox (46.86845pt too wide) detected at line 86
 [] [][] []\OML/cmm/m/it/10 dz \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 res[][] \OT
 1/cmr/m/n/10 = [] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr
 /m/n/10 )(\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 )[](\OMS/cmsy/m
@@ -143,34 +235,34 @@ m/it/10 n\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 s[]
  []
 
 [3] [4]
-Overfull \hbox (17.57173pt too wide) in paragraph at lines 138--140
+Overfull \hbox (17.57173pt too wide) in paragraph at lines 139--141
 []\OT1/cmr/m/n/10 Let $0 \OML/cmm/m/it/10 < ^^R < []$\OT1/cmr/m/n/10 . Then, co
 n-sider the con-tour given by $[][] = [][] + [][] + [][]$.
  []
 
 
-Overfull \hbox (12.41313pt too wide) in paragraph at lines 161--162
+Overfull \hbox (12.41313pt too wide) in paragraph at lines 164--165
 []\OT1/cmr/m/n/10 Note that the last ex-pres-sion con-verges to a holo-mor-phic
  func-tion for $\OML/cmm/m/it/10 Re\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 se[]\OT1/c
 mr/m/n/10 ) \OML/cmm/m/it/10 >
  []
 
 [5]
-Overfull \hbox (86.69423pt too wide) detected at line 168
+Overfull \hbox (113.44218pt too wide) detected at line 171
 \OML/cmm/m/it/10 e[] [][] f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]z\OT1/cmr/m/n/1
 0 )\OML/cmm/m/it/10 e[]dz \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 e[] [][] f\OT1/cmr
-/m/n/10 (\OML/cmm/m/it/10 e[]z\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 e[]dz
+/m/n/10 (\OML/cmm/m/it/10 e[]z\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 e[]dz [] U[]
  []
 
 (./operac.bbl) [6] (./operac.aux) ) 
 Here is how much of TeX's memory you used:
- 1806 strings out of 483183
- 23978 string characters out of 5966293
- 252335 words of memory out of 5000000
- 16831 multiletter control sequences out of 15000+600000
+ 2867 strings out of 483183
+ 38650 string characters out of 5966293
+ 272645 words of memory out of 5000000
+ 17844 multiletter control sequences out of 15000+600000
  540547 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 30i,6n,31p,559b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,6n,31p,559b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
@@ -189,7 +281,7 @@ m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on operac.pdf (6 pages, 205523 bytes).
+Output written on operac.pdf (6 pages, 205882 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
