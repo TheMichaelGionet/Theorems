@@ -10,14 +10,14 @@
 
 \title{Analytic Continuation of the Laplace and Z Transform Operators}
 \author{Michael Gionet}
-\date{Jan 18th, 2024}
+\date{Feb 1st, 2024}
 
 \begin{document}
 	\maketitle
 	
 	\section{Preliminaries}
 	
-	For more information about complex analysis, or any theorems seen, see \cite{steinComplexAnalysis}.
+	For further information about complex analysis, see \cite{steinComplexAnalysis}. 
 	
 	\subsection{Complex Analytic Functions}
 	
@@ -44,8 +44,20 @@
 		Let $f : U \backslash \left\{z_k \right\} \rightarrow \mathbb{C} $ be holomorphic so that $f$ takes on poles at the points in $\left\{ z_k \right\}$. Then, we say that $f$ is meromorphic.
 	\end{definition}
 
-	TODO: Cauchy's theorem, analytic continuation, theorem that shows that an integral converges to a holomorphic function.
+	
+	\begin{theorem} \label{ cauchy_theorem }
+		Let $ U \subseteq \mathbb{C} $ be open, and let $f : U \rightarrow \mathbb{C}$ be holomorphic. Then, if $\gamma$ is a simple closed contour in $U$ with positive orientation, then
+		$$ \int_{\gamma} f(z) dz = 0 $$
+	\end{theorem}
 
+	\begin{theorem} \label{ cauchy_residue_theorem }
+		Let $ U \subseteq \mathbb{C} $ be open, and let $f : U \rightarrow \mathbb{C}$ be meromorphic, with simple poles at $\left\{ \rho_k \right\}$. Then, if $\gamma$ is a simple closed curve in $U$ with positive orientation, with $z_0 \in int(\gamma)$, then, 
+		$$ \int_{\gamma} f(z) dz = 2 \pi i \sum_{ \rho_k \in int(\gamma) } \, res_{z=\rho_k} f(z) $$
+	\end{theorem}
+
+	\begin{theorem} \label{ analytic_continuation }
+		Let $U_1, U_2 \subseteq \mathbb{C}$ both be open, so that $U_1 \cap U_2 \neq \varnothing$. Let $f_1 : U_1 \rightarrow \mathbb{C}$, $f_2 : U_2 \rightarrow \mathbb{C}$ both be holomorphic. Then if there is an open set $ V \subseteq U_1 \cap U_2 $, $V \neq \varnothing$, so that for all $z \in V$, $f_1(z) = f_2(z)$, then for all $z \in U_1 \cap U_2$, $f_1(z) = f_2(z)$. If such an $f_2$ is found for a given $f_1$, then we say that $f_2$ is an analytic continuation of $f_1$.
+	\end{theorem}
 
 	
 

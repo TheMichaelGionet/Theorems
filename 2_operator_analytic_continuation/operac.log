@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.6.9)  19 JAN 2024 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.6.9)  1 FEB 2024 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -226,7 +226,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (46.86845pt too wide) detected at line 86
+Overfull \hbox (46.86845pt too wide) detected at line 98
 [] [][] []\OML/cmm/m/it/10 dz \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 res[][] \OT
 1/cmr/m/n/10 = [] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr
 /m/n/10 )(\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 )[](\OMS/cmsy/m
@@ -235,56 +235,56 @@ m/it/10 n\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 s[]
  []
 
 [3] [4]
-Overfull \hbox (17.57173pt too wide) in paragraph at lines 139--141
+Overfull \hbox (17.57173pt too wide) in paragraph at lines 151--153
 []\OT1/cmr/m/n/10 Let $0 \OML/cmm/m/it/10 < ^^R < []$\OT1/cmr/m/n/10 . Then, co
 n-sider the con-tour given by $[][] = [][] + [][] + [][]$.
  []
 
-
-Overfull \hbox (12.41313pt too wide) in paragraph at lines 164--165
+[5]
+Overfull \hbox (12.41313pt too wide) in paragraph at lines 176--177
 []\OT1/cmr/m/n/10 Note that the last ex-pres-sion con-verges to a holo-mor-phic
  func-tion for $\OML/cmm/m/it/10 Re\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 se[]\OT1/c
 mr/m/n/10 ) \OML/cmm/m/it/10 >
  []
 
-[5]
-Overfull \hbox (113.44218pt too wide) detected at line 171
+
+Overfull \hbox (113.44218pt too wide) detected at line 183
 \OML/cmm/m/it/10 e[] [][] f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]z\OT1/cmr/m/n/1
 0 )\OML/cmm/m/it/10 e[]dz \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 e[] [][] f\OT1/cmr
 /m/n/10 (\OML/cmm/m/it/10 e[]z\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 e[]dz [] U[]
  []
 
-(./operac.bbl) [6] (./operac.aux) ) 
+(./operac.bbl [6]) [7] (./operac.aux) ) 
 Here is how much of TeX's memory you used:
- 2867 strings out of 483183
- 38650 string characters out of 5966293
- 272645 words of memory out of 5000000
- 17844 multiletter control sequences out of 15000+600000
+ 2870 strings out of 483183
+ 38719 string characters out of 5966293
+ 272668 words of memory out of 5000000
+ 17847 multiletter control sequences out of 15000+600000
  540547 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,6n,31p,559b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb>
-Output written on operac.pdf (6 pages, 205882 bytes).
+ 34i,6n,31p,550b,207s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb>
+Output written on operac.pdf (7 pages, 208694 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
